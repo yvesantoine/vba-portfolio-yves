@@ -1350,7 +1350,7 @@ section h2 {
 .timeline-date {
     flex-shrink: 0;
     width: 100px;
-    text-align: center;
+    text-align: left;
     font-weight: var(--font-weight-semibold);
     color: var(--color-primary);
     position: relative;
