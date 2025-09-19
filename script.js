@@ -8,7 +8,7 @@ if (hamburger && navMenu) {
         navMenu.classList.toggle('active');
     });
 
-    // Close menu when clicking on a link
+    // Close menu when clicking on a link§
     document.querySelectorAll('.nav-menu a').forEach(link => {
         link.addEventListener('click', () => {
             hamburger.classList.remove('active');
@@ -304,3 +304,132 @@ document.querySelectorAll('.contact-item').forEach(item => {
     // Add cursor pointer
     item.style.cursor = 'pointer';
 });
+/* ---- Chart.js Dashboard ---- */
+const blue = getComputedStyle(document.documentElement)
+              .getPropertyValue('--primary-color') || '#2563eb';
+
+/* 1. Pie – Vertriebsregionen */
+new Chart(document.getElementById('comboChart'), {
+  type: 'bar',       // Gesamtchart ist "bar"
+  data: {
+    labels: ['2023', '2024', '2025', 'OKP', 'VVG', 'Vorsorge'],
+    datasets: [
+      {
+        label: 'Baseline Abschlüsse (3 Jahre)',
+        type: 'line',
+        data: [20000, 230000, 25000, null, null, null],        // Nur für die 3 Jahre gültig
+        borderColor: '#FF8A00',
+        backgroundColor: 'rgba(255, 138, 0, 0.08)',
+        fill: true,
+        tension: 0.3,
+        yAxisID: 'y'
+      },
+      {
+        label: 'Abschlüsse nach Sparte',
+        type: 'bar',
+        data: [null, null, null, 18000, 15000, 10000],          // Nur für die Sparten gültig
+        backgroundColor: [
+          '#FF8A00',
+          '#FFD6A3',
+          '#ffe5c0'
+        ],
+        yAxisID: 'y'
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: 'top',
+        labels: {
+          color: '#FF8A00',
+          font: { size: 15 }
+        }
+      },
+      title: {
+        display: true,
+        text: 'Abschlüsse Baseline & nach Sparte (kombiniert)',
+        color: '#FF8A00',
+        font: { weight: 'bold', size: 20 }
+      }
+    },
+    scales: {
+      y: {
+        beginAtZero: true,
+        title: { display: true, text: 'Abschlüsse' }
+      }
+    }
+  }
+});
+    // Datenverteilung angepasst, du kannst die Werte je nach realem Anteil ändern
+    datasets: [{
+      data: [30, 20, 20, 15, 15],
+      backgroundColor: [
+        '#2563eb', // Zentralschweiz
+        '#4183ec', // Westschweiz
+        '#60a5fa', // Nordschweiz
+        '#93c5fd', // Tessin
+        '#bfdbfe'  // Zürich
+      ]
+    }]
+  },
+  options: {
+    plugins: {
+      legend: {
+        position: 'bottom',
+        labels: {
+          color: '#2563eb',    // Portfolio-Blau für die Legende
+          font: { size: 16, weight: 'bold' },
+          boxWidth: 24,
+          padding: 18
+        }
+      }
+    }
+  }
+});
+
+
+/* 2. Bar – Abschlüsse nach Sparte */
+new Chart(document.getElementById('barAbschluesse'), {
+  type:'bar',
+  data:{
+    labels:['OKP','VVG','Vorsorge'],
+    datasets:[{data:[18000,15000,10000],
+      backgroundColor:['#2563eb','#1e40af','#3b82f6']}]
+  },
+  options:{
+    responsive: true,
+    maintainAspectRatio: true,
+    aspectRatio: 1.6,   // Grafik ist breiter als hoch
+    plugins:{legend:{display:false}},
+    scales:{y:{beginAtZero:true}}
+}});
+
+/* 3. Line – Baseline letzte 3 Jahre */
+new Chart(document.getElementById('lineBaseline'), {
+  type:'line',
+  data:{
+    labels:['2023','2024','2025'],
+    datasets:[{data:[20000,230000,25000],
+      borderColor:blue,backgroundColor:'rgba(37,99,235,.15)',fill:true,tension:.3}]
+  },
+  options:{plugins:{legend:{display:false}},scales:{y:{beginAtZero:true}}}
+});
+
+/* 4. Progress-Kreise – Abschlussziele */
+const goals=[{id:'circleZiel1',val:80},{id:'circleZiel2',val:55},{id:'circleZiel3',val:65}];
+goals.forEach(g=>{
+  new Chart(document.getElementById(g.id),{
+    type:'doughnut',
+    data:{datasets:[{data:[g.val,100-g.val],
+      backgroundColor:[blue,'#e5e7eb']}]},
+    options:{cutout:'70%',plugins:{legend:{display:false},tooltip:{enabled:false}}}
+  });
+});
+
+/* 5. KPI-Cards */
+document.getElementById('kpiTermine').textContent = '12 000';
+document.getElementById('kpiLeads').textContent   = '90 000';
+document.getElementById('kpiBudget').textContent  = 'CHF 20 000';
+
