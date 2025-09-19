@@ -312,12 +312,40 @@ const blue = getComputedStyle(document.documentElement)
 new Chart(document.getElementById('pieRegionen'), {
   type: 'pie',
   data: {
-    labels: ['Zentralschweiz','Zürich','Tessin','Westschweiz','Nordschweiz'],
-    datasets:[{data:[30,25,15,20,10],      // Anteil geschätzt → ggf. anpassen
-      backgroundColor:['#3b82f6','#60a5fa','#93c5fd','#bfdbfe','#c7d2fe']}]
+    labels: [
+      'Zentralschweiz',
+      'Westschweiz',
+      'Nordschweiz',
+      'Tessin',
+      'Zürich'
+    ],
+    // Datenverteilung angepasst, du kannst die Werte je nach realem Anteil ändern
+    datasets: [{
+      data: [30, 20, 20, 15, 15],
+      backgroundColor: [
+        '#2563eb', // Zentralschweiz
+        '#4183ec', // Westschweiz
+        '#60a5fa', // Nordschweiz
+        '#93c5fd', // Tessin
+        '#bfdbfe'  // Zürich
+      ]
+    }]
   },
-  options:{plugins:{legend:{position:'bottom'}}}
+  options: {
+    plugins: {
+      legend: {
+        position: 'bottom',
+        labels: {
+          color: '#2563eb',    // Portfolio-Blau für die Legende
+          font: { size: 16, weight: 'bold' },
+          boxWidth: 24,
+          padding: 18
+        }
+      }
+    }
+  }
 });
+
 
 /* 2. Bar – Abschlüsse nach Sparte */
 new Chart(document.getElementById('barAbschluesse'), {
