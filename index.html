@@ -277,30 +277,19 @@ End Sub</code></pre>
     </section>
 <!-- Dashboard Section -->
 <section id="dashboard" class="dashboard">
-  <div class="container">
-    <h2>Vertriebsservices Dashboard</h2>
-
-    <!-- Grid -->
-    <div class="dash-grid">
-
-      <!-- Pie Chart: Regionen -->
-      <div class="card chart-box">
-        <h3>Regionen­struktur</h3>
-        <canvas id="pieRegionen"></canvas>
-      </div>
-
-      <!-- Bar Chart: Abschlüsse -->
-      <div class="card chart-box">
-        <h3>Abschlüsse nach Sparte</h3>
-        <canvas id="barAbschluesse"></canvas>
-      </div>
+  
 
       <!-- Line Chart: Baseline -->
 <div class="card chart-box wide">
     <h3>Abschlüsse Baseline (3 Jahre)</h3>
     <canvas id="lineBaseline"></canvas>  <!-- Das ist der alte Canvas-Tag -->
 </div>
-        
+        <!-- Kombiniertes Chart -->
+<div class="card chart-box wide">
+  <h3>Kombinierte Abschlüsse & Baseline</h3>
+  <canvas id="comboChart"></canvas>
+</div>
+
         
         <!-- Progress-Circles Ziele -->
       <div class="card kpi-circle">
