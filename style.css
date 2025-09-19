@@ -1893,37 +1893,3 @@ html {
   box-shadow: 0 10px 25px rgba(37, 99, 235, 0.06);
   margin-left: 0;
 }
-@media (max-width: 768px) {
-  .timeline {
-    padding-left: 0;
-  }
-  .timeline::before {
-    left: 16px; /* Linie näher an den Content schieben */
-    top: 30px;  /* Passe ggf. die vertikale Ausrichtung an */
-  }
-  .timeline-item {
-    flex-direction: column;
-    gap: 1rem;
-    align-items: flex-start;
-    position: relative;
-    min-height: 100px;
-  }
-  .timeline-date {
-    width: auto;
-    text-align: left;
-    padding-top: 0;
-    margin-bottom: 0.2em;
-    position: relative;
-  }
-  .timeline-date::after {
-    left: -16px; /* Der Kreis exakt auf die Linie */
-    top: 5px;    /* Exakter Abstand zum Date-Text – value ggf. anpassen! */
-    width: 12px;
-    height: 12px;
-  }
-  .timeline-content {
-    margin-left: 0;
-    margin-top: 0.5em;
-    width: 95%;
-  }
-}
