@@ -1794,3 +1794,45 @@ html {
   top: 40px; /* Starte Linie etwas tiefer, um Verschiebung auszugleichen */
   left: 56px; /* Passe linken Abstand an */
 }
+/* Fix für Timeline-Verschiebung: Bessere Ausrichtung */
+.timeline-item {
+    display: flex;
+    gap: var(--space-32);
+    margin-bottom: 3rem;
+    position: relative;
+    align-items: flex-start; /* Align text to the top instead of center */
+}
+
+.timeline-date {
+    flex-shrink: 0;
+    width: 100px;
+    text-align: right; /* Align to right for timeline date */
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-primary);
+    position: relative;
+    font-size: var(--font-size-base);
+    padding-top: 20px; /* Push date down for alignment with content box */
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 65px; /* Adjusted left position to line up with new timeline-date text-align */
+    top: 40px; /* Start slightly lower for better vertical alignment */
+    bottom: 0;
+    width: 2px;
+    background: var(--gradient);
+}
+
+.timeline-date::after {
+    content: '';
+    position: absolute;
+    left: 56px; /* Position dot closer to timeline line */
+    top: 38px; /* Adjust vertically: dot centerline to timeline item alignment */
+    width: 16px;
+    height: 16px;
+    background: var(--color-primary);
+    border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: 0 0 0 3px var(--color-primary);
+}
