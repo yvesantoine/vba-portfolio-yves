@@ -1769,4 +1769,28 @@ html {
 ::-webkit-scrollbar-thumb:hover {
     background: var(--color-primary-hover);
 }
+/* Fix für Timeline-Verschiebung: Bessere Ausrichtung */
+.timeline-item {
+  display: flex;
+  align-items: flex-start; /* Text von oben ausrichten, nicht zentriert */
+  gap: 2rem;
+  margin-bottom: 3rem;
+  position: relative;
+}
 
+.timeline-date {
+  padding-top: 20px; /* Passe an, um Datum mit Box-Höhe abzustimmen */
+  position: relative;
+}
+
+.timeline-date::after {
+  top: 38px; /* Passe vertikale Position des Punkts an (z.B. 38px von oben) */
+  left: 110px; /* Passe horizontale Position an */
+  width: 16px;
+  height: 16px;
+}
+
+.timeline::before {
+  top: 40px; /* Starte Linie etwas tiefer, um Verschiebung auszugleichen */
+  left: 56px; /* Passe linken Abstand an */
+}
