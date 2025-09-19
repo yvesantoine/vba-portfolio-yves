@@ -1836,3 +1836,60 @@ html {
     border: 3px solid white;
     box-shadow: 0 0 0 3px var(--color-primary);
 }
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 60px; /* Passe nach Bedarf an, je nach Date-Breite */
+  top: 42px; /* Beginnt unterhalb der Überschrift zur sauberen Ausrichtung */
+  bottom: 0;
+  width: 2px;
+  background: var(--gradient, #FF8A00);
+}
+
+.timeline-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  position: relative;
+  min-height: 140px; /* Optimales Minimum für vertikale Ausrichtung */
+}
+
+.timeline-date {
+  flex-shrink: 0;
+  width: 120px;
+  text-align: right;
+  font-weight: 600;
+  color: var(--primary-color, #FF8A00);
+  position: relative;
+  font-size: 1rem;
+  padding-top: 22px; /* Feintuning – senkt Date vertikal */
+}
+
+.timeline-date::after {
+  content: '';
+  position: absolute;
+  left: 100px; /* Position des Kreises passend zur Linie (Date-Breite minus etwas Abstand) */
+  top: 34px; /* Feintuning: Verschiebt Kreis vertikal - bestimme durch Testen */
+  width: 13px;
+  height: 13px;
+  background: var(--primary-color, #FF8A00);
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 2px var(--primary-color, #FF8A00);
+}
+
+.timeline-content {
+  flex: 1;
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.06);
+  margin-left: 0;
+}
