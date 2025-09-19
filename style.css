@@ -1807,3 +1807,13 @@ html {
   display: block;
   margin: auto;
 }
+/* Bar Chart Container - fixiertes Seitenverhältnis */
+.chart-box canvas#barAbschluesse {
+  max-width: 440px;
+  width: 100%;
+  height: 280px !important;
+  aspect-ratio: 1.6 / 1;                   /* Seitenverhältnis: breite Balken */
+  display: block;
+  margin: auto;
+}
+
