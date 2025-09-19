@@ -362,7 +362,6 @@ new Chart(document.getElementById('comboChart'), {
     }
   }
 });
-
     // Datenverteilung angepasst, du kannst die Werte je nach realem Anteil ändern
     datasets: [{
       data: [30, 20, 20, 15, 15],
