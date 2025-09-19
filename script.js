@@ -309,16 +309,60 @@ const blue = getComputedStyle(document.documentElement)
               .getPropertyValue('--primary-color') || '#2563eb';
 
 /* 1. Pie – Vertriebsregionen */
-new Chart(document.getElementById('pieRegionen'), {
-  type: 'pie',
+new Chart(document.getElementById('comboChart'), {
+  type: 'bar',       // Gesamtchart ist "bar"
   data: {
-    labels: [
-      'Zentralschweiz',
-      'Westschweiz',
-      'Nordschweiz',
-      'Tessin',
-      'Zürich'
-    ],
+    labels: ['2023', '2024', '2025', 'OKP', 'VVG', 'Vorsorge'],
+    datasets: [
+      {
+        label: 'Baseline Abschlüsse (3 Jahre)',
+        type: 'line',
+        data: [20000, 230000, 25000, null, null, null],        // Nur für die 3 Jahre gültig
+        borderColor: '#FF8A00',
+        backgroundColor: 'rgba(255, 138, 0, 0.08)',
+        fill: true,
+        tension: 0.3,
+        yAxisID: 'y'
+      },
+      {
+        label: 'Abschlüsse nach Sparte',
+        type: 'bar',
+        data: [null, null, null, 18000, 15000, 10000],          // Nur für die Sparten gültig
+        backgroundColor: [
+          '#FF8A00',
+          '#FFD6A3',
+          '#ffe5c0'
+        ],
+        yAxisID: 'y'
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: 'top',
+        labels: {
+          color: '#FF8A00',
+          font: { size: 15 }
+        }
+      },
+      title: {
+        display: true,
+        text: 'Abschlüsse Baseline & nach Sparte (kombiniert)',
+        color: '#FF8A00',
+        font: { weight: 'bold', size: 20 }
+      }
+    },
+    scales: {
+      y: {
+        beginAtZero: true,
+        title: { display: true, text: 'Abschlüsse' }
+      }
+    }
+  }
+});
+
     // Datenverteilung angepasst, du kannst die Werte je nach realem Anteil ändern
     datasets: [{
       data: [30, 20, 20, 15, 15],
