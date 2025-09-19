@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vertriebsspezialist - Portfolio</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>VBA Excel Automation Specialist - Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
@@ -13,15 +12,14 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <h2>Vertriebsservices Portfolio – Yves Nadig</h2>
+                <h2>VBA Portfolio</h2>
             </div>
             <ul class="nav-menu">
-                <li><a href="#about">Über mich</a></li>
+                <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projekte</a></li>
-                <li><a href="#dashboard">Dashboard</a></li>
-                <li><a href="#experience">Berufserfahrungen</a></li>
-                <li><a href="#contact">Kontakt</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="hamburger">
                 <span></span>
@@ -34,8 +32,8 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1>Analytischer Vertirbsspezialist</h1>
-            <h2>Bereichsleiter Vertriebsservices Kandidat</h2>
+            <h1>Excel VBA Automation Specialist</h1>
+            <h2>Bereichsleiter Vertriebsservices Candidate</h2>
             <p>Transforming complex data processes into efficient automated solutions</p>
             <div class="hero-buttons">
                 <a href="#projects" class="btn primary">View Projects</a>
@@ -75,27 +73,27 @@ End Sub</code></pre>
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
-            <h2>Über mich</h2>
+            <h2>About Me</h2>
             <div class="about-content">
                 <div class="about-text">
                     <p>Experienced telemarketing management professional at SWICA health insurance with strong expertise in Excel automation using VBA. I specialize in developing efficient data processing solutions, team leadership, and operational optimization.</p>
                     
                     <div class="qualifications">
-                        <h3>Qualifikationen für Bereichsleiter Vertriebsservices</h3>
+                        <h3>Qualifications for Bereichsleiter Vertriebsservices</h3>
                         <ul>
-                            <li><i class="fas fa-check"></i> Universitätsabschluss (Bachelor of Arts, Universität Zürich; Assesment Rechtsiwssenschaften, Universität Bern)</li>
-                            <li><i class="fas fa-check"></i> Mehrjährige Führungserfahrung in allen Landessprachen</li>
-                            <li><i class="fas fa-check"></i> Fortgeschrittene Expertise in analytischen und statistischen Tools</li>
-                            <li><i class="fas fa-check"></i> Excellente Kommunikationsfähigkeiten (Deutsch, Französisch, Englisch, Italienisch, Spanisch, Kroatisch, Russich)</li>
-                            <li><i class="fas fa-check"></i> Hohe Leistungsorientierung und Selbstständigkeit</li>
-                            <li><i class="fas fa-check"></i> Nachweisliche Konfliktmanagement-Skills und Teamorientierung</li>
+                            <li><i class="fas fa-check"></i> University degree (Bachelor of Arts, University of Zurich)</li>
+                            <li><i class="fas fa-check"></i> Multiple years of leadership experience</li>
+                            <li><i class="fas fa-check"></i> Advanced analytical and statistical tools expertise</li>
+                            <li><i class="fas fa-check"></i> Excellent communication skills (German C2, French, English, Italian)</li>
+                            <li><i class="fas fa-check"></i> High performance orientation and independence</li>
+                            <li><i class="fas fa-check"></i> Strong conflict resolution and team orientation</li>
                         </ul>
                     </div>
                 </div>
                 <div class="about-stats">
                     <div class="stat">
-                        <h3>5+</h3>
-                        <p>Jahre Leadership</p>
+                        <h3>6+</h3>
+                        <p>Years Leadership Experience</p>
                     </div>
                     <div class="stat">
                         <h3>75%</h3>
@@ -117,7 +115,7 @@ End Sub</code></pre>
     <!-- Skills Section -->
     <section id="skills" class="skills">
         <div class="container">
-            <h2>Technische Skills</h2>
+            <h2>Technical Skills</h2>
             <div class="skills-grid">
                 <div class="skill-category">
                     <h3><i class="fas fa-code"></i> VBA Automation</h3>
@@ -275,84 +273,18 @@ End Sub</code></pre>
             </div>
         </div>
     </section>
-<!-- Dashboard Section -->
-<section id="dashboard" class="dashboard">
-  <div class="container">
-    <h2>Vertriebsservices Dashboard</h2>
-
-    <!-- Grid -->
-    <div class="dash-grid">
-
-      <!-- Pie Chart: Regionen -->
-      <div class="card chart-box">
-        <h3>Regionen­struktur</h3>
-        <canvas id="pieRegionen"></canvas>
-      </div>
-
-      <!-- Bar Chart: Abschlüsse -->
-      <div class="card chart-box">
-        <h3>Abschlüsse nach Sparte</h3>
-        <canvas id="barAbschluesse"></canvas>
-      </div>
-
-      <!-- Line Chart: Baseline -->
-<div class="card chart-box wide">
-    <h3>Abschlüsse Baseline (3 Jahre)</h3>
-    <canvas id="lineBaseline"></canvas>  <!-- Das ist der alte Canvas-Tag -->
-</div>
-        
-        
-        <!-- Progress-Circles Ziele -->
-      <div class="card kpi-circle">
-        <h4>Ziel OKP</h4>
-        <canvas id="circleZiel1"></canvas>
-      </div>
-      <div class="card kpi-circle">
-        <h4>Ziel VVG</h4>
-        <canvas id="circleZiel2"></canvas>
-      </div>
-      <div class="card kpi-circle">
-        <h4>Ziel Vorsorge</h4>
-        <canvas id="circleZiel3"></canvas>
-      </div>
-        
-      <!-- KPI-Cards -->
-        <div class="card kpi-card">
-  <h4>Agenturen</h4>
-  <p>150</p>
-</div>
-
-<div class="card kpi-card">
-  <h4>Geschäftsstellen</h4>
-  <p>30</p>
-</div>
-      <div class="card kpi-card">
-        <h4>Termine Telemarketing</h4>
-        <p id="kpiTermine">-</p>
-      </div>
-      <div class="card kpi-card">
-        <h4>Leads</h4>
-        <p id="kpiLeads">-</p>
-      </div>
-      <div class="card kpi-card">
-        <h4>Marketing-Budget Aufbrauch</h4>
-        <p id="kpiBudget">-</p>
-      </div>
-    </div>
-  </div>
-</section>
 
     <!-- Experience Section -->
     <section id="experience" class="experience">
         <div class="container">
-            <h2>Berufliche Erfahrung</h2>
+            <h2>Professional Experience</h2>
             <div class="timeline">
                 <div class="timeline-item">
-                    <div class="timeline-date">Gegnwärtige Rolle</div>
+                    <div class="timeline-date">Current</div>
                     <div class="timeline-content">
-                        <h3>Leiter Kompetenzcenter Telemarketing </h3>
-                        <h4>SWICA Gesundheitsorganisation</h4>
-                        <p>Leitung des oprtativen Telemarketings bei SWICA sowie internes Stakeholdermanagement und Fokus auf BSI CRM Datenmanagement </p>
+                        <h3>Telemarketing Manager</h3>
+                        <h4>SWICA Health Insurance</h4>
+                        <p>Leading telemarketing operations and team management with focus on process automation and efficiency improvement.</p>
                         <ul>
                             <li>Developed VBA solutions reducing data processing time by 75%</li>
                             <li>Managed multi-lingual telemarketing teams</li>
@@ -363,11 +295,11 @@ End Sub</code></pre>
                 </div>
                 
                 <div class="timeline-item">
-                    <div class="timeline-date">Januar 2025</div>
+                    <div class="timeline-date">2018</div>
                     <div class="timeline-content">
                         <h3>Bachelor of Arts</h3>
-                        <h4>Universität Zürich</h4>
-                        <p>Promoviert in Anglistik mit Nebenfach Populäre Kulturen. Analytisches Denken und Kommunikationsfähigkeiten entwickelt – essenziell für Führungsaufgaben.</p>
+                        <h4>University of Zurich</h4>
+                        <p>Graduated with minor in Popular Cultures. Developed analytical thinking and communication skills essential for leadership roles.</p>
                     </div>
                 </div>
             </div>
@@ -377,37 +309,37 @@ End Sub</code></pre>
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <h2>Bereit, über Ihre Bedürfnisse zu sprechen?</h2>
-            <p>Lassen Sie uns besprechen, wie meine analytischen, linguistischen und kommunikativen Fähigkeiten sowie Führungserfahrung zum Erfolg in der Rolle als Bereichsleiter*in Vertriebsservices bei CONCORDIA beitragen können.</p>
+            <h2>Ready to Discuss Your Needs?</h2>
+            <p>Let's talk about how my VBA automation expertise and leadership experience can drive success in the Bereichsleiter Vertriebsservices role at Concordia.</p>
             
             <div class="contact-grid">
                 <div class="contact-info">
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
                         <div>
-                            <h4>E-Mail</h4>
-                            <p>yves.antoine.nadig@gmailcom</p>
+                            <h4>Email</h4>
+                            <p>your.email@domain.com</p>
                         </div>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-phone"></i>
                         <div>
-                            <h4>Telefon</h4>
-                            <p>+41 78 745 94 44</p>
+                            <h4>Phone</h4>
+                            <p>+41 XX XXX XX XX</p>
                         </div>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-map-marker-alt"></i>
                         <div>
-                            <h4>Wohnort</h4>
-                            <p>Rosenweg 10, 6340 Baar, Schweiz</p>
+                            <h4>Location</h4>
+                            <p>Baar, ZG, Switzerland</p>
                         </div>
                     </div>
                     <div class="contact-item">
                         <i class="fab fa-linkedin"></i>
                         <div>
                             <h4>LinkedIn</h4>
-                            <p>www.linkedin.com/in/yves-antoine-nadig</p>
+                            <p>your-linkedin-profile</p>
                         </div>
                     </div>
                 </div>
@@ -415,15 +347,15 @@ End Sub</code></pre>
                 <div class="contact-form">
                     <form>
                         <div class="form-group">
-                            <input type="text" placeholder="Dein Name" required>
+                            <input type="text" placeholder="Your Name" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" placeholder="Deine E-Mail" required>
+                            <input type="email" placeholder="Your Email" required>
                         </div>
                         <div class="form-group">
-                            <textarea placeholder="Deine Nachricht" rows="5" required></textarea>
+                            <textarea placeholder="Your Message" rows="5" required></textarea>
                         </div>
-                        <button type="submit" class="btn primary">Sende Nachricht</button>
+                        <button type="submit" class="btn primary">Send Message</button>
                     </form>
                 </div>
             </div>
@@ -433,7 +365,7 @@ End Sub</code></pre>
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 VBA Excel Automation Specialist. Bereit für die Rolle Bereichsleiter Vertriebsservices CONCORDIA</p>
+            <p>&copy; 2025 VBA Excel Automation Specialist. Ready for Bereichsleiter Vertriebsservices role at Concordia.</p>
         </div>
     </footer>
 
