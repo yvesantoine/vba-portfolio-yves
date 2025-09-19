@@ -327,8 +327,13 @@ new Chart(document.getElementById('barAbschluesse'), {
     datasets:[{data:[18000,15000,10000],
       backgroundColor:['#2563eb','#1e40af','#3b82f6']}]
   },
-  options:{plugins:{legend:{display:false}},scales:{y:{beginAtZero:true}}}
-});
+  options:{
+    responsive: true,
+    maintainAspectRatio: true,
+    aspectRatio: 1.6,   // Grafik ist breiter als hoch
+    plugins:{legend:{display:false}},
+    scales:{y:{beginAtZero:true}}
+}});
 
 /* 3. Line – Baseline letzte 3 Jahre */
 new Chart(document.getElementById('lineBaseline'), {
