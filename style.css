@@ -1839,3 +1839,17 @@ html {
   font-weight: 700;
 }
 
+/* Bar Chart breiter darstellen */
+.chart-box.wide {
+  grid-column: span 2;
+  max-width: 720px;
+}
+
+.chart-box canvas#barAbschluesse {
+  width: 100% !important;
+  height: 450px !important;     /* Höhe passend zum Verhältnis */
+  aspect-ratio: 1.6 / 1;
+  max-width: 720px;
+  display: block;
+  margin: auto;
+}
