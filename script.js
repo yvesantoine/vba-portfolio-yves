@@ -308,48 +308,52 @@ document.querySelectorAll('.contact-item').forEach(item => {
 const blue = getComputedStyle(document.documentElement)
               .getPropertyValue('--primary-color') || '#2563eb';
 
-// Beispiel-Daten (später ersetzen)
-const regionData = {labels:['Nord','Süd','West','Ost'],
-  datasets:[{data:[30,25,25,20],backgroundColor:['#3b82f6','#60a5fa','#93c5fd','#bfdbfe']}]};
-
-const absData = {labels:['OKP','VVG','Vorsorge'],
-  datasets:[{label:'Abschlüsse',data:[120,85,40],
-    backgroundColor:['#2563eb','#1e40af','#3b82f6']}]};
-
-const baseData = {labels:['2023','2024','2025'],
-  datasets:[{label:'Abschlüsse',data:[200,230,245],
-    borderColor:blue,backgroundColor:'rgba(37,99,235,.15)',fill:true,tension:.3}]};
-
-// Initialisierung – nach DOM Load
-document.addEventListener('DOMContentLoaded',()=>{
-
-  // Pie Regionen
-  new Chart(document.getElementById('pieRegionen'),{
-    type:'pie',data:regionData,options:{plugins:{legend:{position:'bottom'}}}});
-
-  // Bar Abschlüsse
-  new Chart(document.getElementById('barAbschluesse'),{
-    type:'bar',data:absData,options:{plugins:{legend:{display:false}},
-      scales:{y:{beginAtZero:true}}}});
-
-  // Line Baseline
-  new Chart(document.getElementById('lineBaseline'),{
-    type:'line',data:baseData,options:{plugins:{legend:{display:false}},
-      scales:{y:{beginAtZero:true}}}});
-
-  // Progress-Kreise (Doughnut)
-  const goals=[{id:'circleZiel1',val:80},{id:'circleZiel2',val:55},{id:'circleZiel3',val:65}];
-  goals.forEach(g=>{
-    new Chart(document.getElementById(g.id),{
-      type:'doughnut',
-      data:{datasets:[{data:[g.val,100-g.val],
-        backgroundColor:[blue,'#e5e7eb'],hoverOffset:4}]},
-      options:{cutout:'70%',plugins:{legend:{display:false},
-        tooltip:{enabled:false},}}});
-  });
-
-  // KPI-Cards Placeholder-Werte
-  document.getElementById('kpiTermine').textContent = '42';
-  document.getElementById('kpiLeads').textContent   = '175';
-  document.getElementById('kpiBudget').textContent  = 'CHF 35 000';
+/* 1. Pie – Vertriebsregionen */
+new Chart(document.getElementById('pieRegionen'), {
+  type: 'pie',
+  data: {
+    labels: ['Zentralschweiz','Zürich','Tessin','Westschweiz','Nordschweiz'],
+    datasets:[{data:[30,25,15,20,10],      // Anteil geschätzt → ggf. anpassen
+      backgroundColor:['#3b82f6','#60a5fa','#93c5fd','#bfdbfe','#c7d2fe']}]
+  },
+  options:{plugins:{legend:{position:'bottom'}}}
 });
+
+/* 2. Bar – Abschlüsse nach Sparte */
+new Chart(document.getElementById('barAbschluesse'), {
+  type:'bar',
+  data:{
+    labels:['OKP','VVG','Vorsorge'],
+    datasets:[{data:[18000,15000,10000],
+      backgroundColor:['#2563eb','#1e40af','#3b82f6']}]
+  },
+  options:{plugins:{legend:{display:false}},scales:{y:{beginAtZero:true}}}
+});
+
+/* 3. Line – Baseline letzte 3 Jahre */
+new Chart(document.getElementById('lineBaseline'), {
+  type:'line',
+  data:{
+    labels:['2023','2024','2025'],
+    datasets:[{data:[20000,230000,25000],
+      borderColor:blue,backgroundColor:'rgba(37,99,235,.15)',fill:true,tension:.3}]
+  },
+  options:{plugins:{legend:{display:false}},scales:{y:{beginAtZero:true}}}
+});
+
+/* 4. Progress-Kreise – Abschlussziele */
+const goals=[{id:'circleZiel1',val:80},{id:'circleZiel2',val:55},{id:'circleZiel3',val:65}];
+goals.forEach(g=>{
+  new Chart(document.getElementById(g.id),{
+    type:'doughnut',
+    data:{datasets:[{data:[g.val,100-g.val],
+      backgroundColor:[blue,'#e5e7eb']}]},
+    options:{cutout:'70%',plugins:{legend:{display:false},tooltip:{enabled:false}}}
+  });
+});
+
+/* 5. KPI-Cards */
+document.getElementById('kpiTermine').textContent = '12 000';
+document.getElementById('kpiLeads').textContent   = '90 000';
+document.getElementById('kpiBudget').textContent  = 'CHF 20 000';
+
