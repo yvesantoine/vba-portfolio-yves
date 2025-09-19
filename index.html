@@ -19,6 +19,7 @@
                 <li><a href="#about">Über mich</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projekte</a></li>
+                <li><a href="#dashboard">Dashboard</a></li>
                 <li><a href="#experience">Berufserfahrungen</a></li>
                 <li><a href="#contact">Kontakt</a></li>
             </ul>
@@ -274,6 +275,73 @@ End Sub</code></pre>
             </div>
         </div>
     </section>
+<!-- Dashboard Section -->
+<section id="dashboard" class="dashboard">
+  <div class="container">
+    <h2>Vertriebsservices Dashboard</h2>
+
+    <!-- Grid -->
+    <div class="dash-grid">
+
+      <!-- Pie Chart: Regionen -->
+      <div class="card chart-box">
+        <h3>Regionen­struktur</h3>
+        <canvas id="pieRegionen"></canvas>
+      </div>
+
+      <!-- Bar Chart: Abschlüsse -->
+      <div class="card chart-box">
+        <h3>Abschlüsse nach Sparte</h3>
+        <canvas id="barAbschluesse"></canvas>
+      </div>
+
+      <!-- Line Chart: Baseline -->
+<div class="card chart-box wide">
+    <h3>Abschlüsse Baseline (3 Jahre)</h3>
+    <canvas id="lineBaseline"></canvas>  <!-- Das ist der alte Canvas-Tag -->
+</div>
+        
+        
+        <!-- Progress-Circles Ziele -->
+      <div class="card kpi-circle">
+        <h4>Ziel OKP</h4>
+        <canvas id="circleZiel1"></canvas>
+      </div>
+      <div class="card kpi-circle">
+        <h4>Ziel VVG</h4>
+        <canvas id="circleZiel2"></canvas>
+      </div>
+      <div class="card kpi-circle">
+        <h4>Ziel Vorsorge</h4>
+        <canvas id="circleZiel3"></canvas>
+      </div>
+        
+      <!-- KPI-Cards -->
+        <div class="card kpi-card">
+  <h4>Agenturen</h4>
+  <p>150</p>
+</div>
+
+<div class="card kpi-card">
+  <h4>Geschäftsstellen</h4>
+  <p>30</p>
+</div>
+      <div class="card kpi-card">
+        <h4>Termine Telemarketing</h4>
+        <p id="kpiTermine">-</p>
+      </div>
+      <div class="card kpi-card">
+        <h4>Leads</h4>
+        <p id="kpiLeads">-</p>
+      </div>
+      <div class="card kpi-card">
+        <h4>Marketing-Budget Aufbrauch</h4>
+        <p id="kpiBudget">-</p>
+      </div>
+    </div>
+  </div>
+</section>
+
     <!-- Experience Section -->
     <section id="experience" class="experience">
         <div class="container">
