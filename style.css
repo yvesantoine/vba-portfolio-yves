@@ -1817,3 +1817,25 @@ html {
   margin: auto;
 }
 
+/* Pie Chart Legend für Regionenstruktur */
+.chart-box .chartjs-render-monitor + .chartjs-legend {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 36px;
+  margin-top: 18px;
+}
+
+.chartjs-legend li {
+  font-size: 1.14rem;
+  color: #2563eb !important;
+  font-weight: 600;
+  padding: 0 6px;
+}
+
+.chart-box h3 {
+  color: #2563eb !important;
+  font-size: 1.20rem;
+  font-weight: 700;
+}
+
