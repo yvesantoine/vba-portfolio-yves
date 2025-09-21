@@ -1791,3 +1791,23 @@ html {
   margin: .4rem 0;
   padding-left: 1rem;           /* konsistent zum ✓-Icon */
 }
+/* Stacking-Order fix: Linie & Punkt über der Karte */
+.timeline { position: relative; z-index: 0; }
+
+.timeline::before {           /* die vertikale Linie */
+  position: absolute;
+  z-index: 3;                 /* über dem Content */
+}
+
+.timeline-date { position: relative; z-index: 4; }
+.timeline-date::after {       /* der runde Punkt */
+  position: absolute;
+  z-index: 4;                 /* über allem im Abschnitt */
+}
+
+/* Die Karte selbst bleibt darunter */
+.timeline .timeline-content {
+  position: relative;
+  z-index: 2;
+  overflow: visible;          /* falls der Punkt in den Kartenbereich ragt */
+}
