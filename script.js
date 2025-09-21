@@ -1,37 +1,28 @@
-const hamburger = document.querySelector('.hamburger');
-const navMenu   = document.querySelector('.nav-menu');
+document.addEventListener('DOMContentLoaded', () => {
+  const hamburger = document.querySelector('.hamburger');
+  const navMenu = document.querySelector('.nav-menu');
+  if (!hamburger || !navMenu) return;
 
-function toggleMenu() {
-  hamburger.classList.toggle('active');
-  navMenu.classList.toggle('active');
-}
+  const toggleMenu = (e) => {
+    if (e) e.preventDefault();
+    hamburger.classList.toggle('active');
+    navMenu.classList.toggle('active');
+    document.body.classList.toggle('nav-open'); // lock background scroll
+  };
 
-// Prefer pointer events; fall back to click
-if (hamburger && navMenu) {
-  if (window.PointerEvent) {
-    hamburger.addEventListener('pointerup', toggleMenu);
-  } else {
-    hamburger.addEventListener('touchend', toggleMenu, { passive: true });
-    hamburger.addEventListener('click', toggleMenu);
-  }
+  // Use pointer events on mobile; fall back to click elsewhere
+  const activationEvent = window.PointerEvent ? 'pointerup' : 'click';
+  hamburger.addEventListener(activationEvent, toggleMenu);
 
   // Close on link tap
-  document.querySelectorAll('.nav-menu a').forEach(a => {
+  navMenu.querySelectorAll('a').forEach(a => {
     a.addEventListener('click', () => {
       hamburger.classList.remove('active');
       navMenu.classList.remove('active');
+      document.body.classList.remove('nav-open');
     });
   });
-
-  // Optional: close with ESC
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-      hamburger.classList.remove('active');
-      navMenu.classList.remove('active');
-    }
-  });
-}
-
+});
 // Mobile navigation toggle
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
