@@ -1,3 +1,37 @@
+const hamburger = document.querySelector('.hamburger');
+const navMenu   = document.querySelector('.nav-menu');
+
+function toggleMenu() {
+  hamburger.classList.toggle('active');
+  navMenu.classList.toggle('active');
+}
+
+// Prefer pointer events; fall back to click
+if (hamburger && navMenu) {
+  if (window.PointerEvent) {
+    hamburger.addEventListener('pointerup', toggleMenu);
+  } else {
+    hamburger.addEventListener('touchend', toggleMenu, { passive: true });
+    hamburger.addEventListener('click', toggleMenu);
+  }
+
+  // Close on link tap
+  document.querySelectorAll('.nav-menu a').forEach(a => {
+    a.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      navMenu.classList.remove('active');
+    });
+  });
+
+  // Optional: close with ESC
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      hamburger.classList.remove('active');
+      navMenu.classList.remove('active');
+    }
+  });
+}
+
 // Mobile navigation toggle
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
