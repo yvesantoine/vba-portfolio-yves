@@ -1846,3 +1846,14 @@ html {
   .hamburger { position: relative; z-index: 1101; }
   .nav-menu   { position: fixed;  z-index: 1100; } /* panel below the burger */
 }
+@media (max-width: 768px) {
+  .nav-menu {
+    left: -100%;
+    pointer-events: none;           /* don't block taps while hidden */
+    transition: left 250ms ease;
+  }
+  .nav-menu.active {
+    left: 0;
+    pointer-events: auto;           /* clickable when visible */
+  }
+}
