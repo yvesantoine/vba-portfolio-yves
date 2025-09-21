@@ -1769,3 +1769,25 @@ html {
 ::-webkit-scrollbar-thumb:hover {
     background: var(--color-primary-hover);
 }
+/* --- TIMELINE: Linie an Content-Kante ziehen --- */
+.timeline::before {
+  left: 132px; /* 100px date column + 32px gap */
+}
+
+/* Punkt exakt auf die Linie schieben */
+.timeline-date::after {
+  left: calc(100px + 32px - 6px); /* -6px = Radius (12px/2) für Zentrierung */
+  right: auto;
+}
+
+/* Bullets sauberer Einzug + Abstände */
+.timeline .timeline-content ul {
+  margin: .75rem 0 0;
+  padding-left: 1.2rem;         /* kontrollierter Einzug */
+  list-style: none;             /* wir nutzen das ✓-Pseudo */
+}
+
+.timeline .timeline-content li {
+  margin: .4rem 0;
+  padding-left: 1rem;           /* konsistent zum ✓-Icon */
+}
