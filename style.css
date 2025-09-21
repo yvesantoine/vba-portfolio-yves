@@ -1837,7 +1837,7 @@ html {
 .timeline-date {
   display: flex;          /* erlaubt vertikale Justierung */
   align-items: center;    /* Grundausrichtung */
-  transform: translateY(7px);  /* Feintuning: 4–10px nach Geschmack */
+  transform: translateY(8px);  /* Feintuning: 4–10px nach Geschmack */
   line-height: 1;         /* verhindert extra Zeilenabstand */
 }
 
