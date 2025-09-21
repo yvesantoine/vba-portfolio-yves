@@ -1811,3 +1811,9 @@ html {
   z-index: 2;
   overflow: visible;          /* falls der Punkt in den Kartenbereich ragt */
 }
+/* Karte etwas von der Timeline-Linie abrücken (nur Desktop) */
+@media (min-width: 641px) {
+  .timeline .timeline-content {
+    margin-left: 12px;   /* je nach Geschmack 8–16px */
+  }
+}
