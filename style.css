@@ -1833,17 +1833,3 @@ html {
     padding-right: 0;
   }
 }
-/* Jahr vertikal auf Höhe des Punkts bringen */
-.timeline-date {
-  display: flex;          /* erlaubt vertikale Justierung */
-  align-items: center;    /* Grundausrichtung */
-  transform: translateY(4px);  /* Feintuning: 4–10px nach Geschmack */
-  line-height: 1;         /* verhindert extra Zeilenabstand */
-}
-
-/* Optional: mobil wieder neutral lassen */
-@media (max-width: 640px) {
-  .timeline-date {
-    transform: none;
-  }
-}
