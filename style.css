@@ -1838,18 +1838,3 @@ html {
   font-weight: 500;       /* leicht weniger fett als der Titel */
   opacity: .95;           /* optional: minimal heller/dunkler */
 }
-/* Datum exakt an den Kreis ausrichten */
-.timeline-date{
-  width:100px;               /* deine Date-Column */
-  display:flex;              /* sichere Rechtsbündigkeit */
-  justify-content:flex-end;  /* Text ganz nach rechts */
-  align-items:center;
-  padding-right:10px;        /* Abstand zum Kreis (Feintuning: 8–12px) */
-  text-align:right;          /* fallback */
-  font-variant-numeric: tabular-nums; /* Ziffern mit fester Breite */
-  letter-spacing:.02em;      /* identisch für alle Jahre halten */
-}
-
-/* (falls noch nicht gesetzt) Punkt auf die Linie */
-.timeline-date{ position:relative; }
-.timeline-date::after{ position:absolute; z-index:4; }
