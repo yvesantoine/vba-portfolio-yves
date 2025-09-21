@@ -1817,3 +1817,19 @@ html {
     margin-left: 12px;   /* je nach Geschmack 8–16px */
   }
 }
+/* Jahreszahl näher an den Punkt schieben */
+.timeline-date {
+  width: 100px;           /* wie bisher */
+  text-align: right;      /* an die Linie/Kreis heranrücken */
+  padding-right: 10px;    /* Feintuning: 8–12px nach Geschmack */
+  font-weight: 600;       /* (optional) bessere Lesbarkeit */
+  letter-spacing: .02em;  /* (optional) */
+}
+
+/* Auf kleinen Screens wieder normal linksbündig lassen */
+@media (max-width: 640px) {
+  .timeline-date {
+    text-align: left;
+    padding-right: 0;
+  }
+}
