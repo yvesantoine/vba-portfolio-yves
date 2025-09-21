@@ -1833,3 +1833,8 @@ html {
     padding-right: 0;
   }
 }
+.role-level {
+  display: block;         /* Zeilenumbruch erzwingen */
+  font-weight: 500;       /* leicht weniger fett als der Titel */
+  opacity: .95;           /* optional: minimal heller/dunkler */
+}
