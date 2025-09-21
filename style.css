@@ -1857,3 +1857,37 @@ html {
     pointer-events: auto;           /* clickable when visible */
   }
 }
+/* optional, can live outside the media query */
+body.nav-open { overflow: hidden; }
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+    position: relative;
+    z-index: 1101;            /* burger stays tappable to close */
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 70px;                /* header height */
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 70px);
+    background: var(--color-background);
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    padding-top: var(--space-32);
+    border-right: 1px solid var(--color-border);
+    box-shadow: var(--shadow-md);
+
+    /* the important bits */
+    z-index: 1100;                     /* above page content */
+    transform: translateX(-100%);      /* hidden off-canvas */
+    transition: transform var(--duration-normal) var(--ease-standard);
+  }
+
+  .nav-menu.active {
+    transform: translateX(0);          /* slide in */
+  }
+}
