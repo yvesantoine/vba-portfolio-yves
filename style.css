@@ -1838,3 +1838,7 @@ html {
   font-weight: 500;       /* leicht weniger fett als der Titel */
   opacity: .95;           /* optional: minimal heller/dunkler */
 }
+@media (max-width: 768px) {
+  .hamburger { position: relative; z-index: 1101; }
+  .nav-menu { z-index: 1100; } /* menu below the burger */
+}
