@@ -1891,3 +1891,36 @@ body.nav-open { overflow: hidden; }
     transform: translateX(0);          /* slide in */
   }
 }
+/* Mobile nav behavior */
+@media (max-width: 1024px) {
+  .hamburger { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 6px;
+    z-index: 1100;
+  }
+  .hamburger span {
+    width: 26px; height: 3px;
+    background: var(--color-text);
+    border-radius: var(--radius-sm);
+    transition: transform var(--duration-normal) var(--ease-standard);
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 64px; /* height of navbar */
+    right: 0; left: 0;
+    display: none;
+    flex-direction: column;
+    gap: 16px;
+    background: var(--color-surface);
+    border-top: 1px solid var(--color-border);
+    padding: 16px 24px 24px;
+    box-shadow: var(--shadow-lg);
+    z-index: 1050;
+  }
+  .nav-menu.active { display: flex; }
+
+  /* Lock body scroll when open */
+  body.nav-open { overflow: hidden; }
+}
