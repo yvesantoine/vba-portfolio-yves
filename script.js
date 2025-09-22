@@ -1,3 +1,62 @@
+// script.js — TOP OF FILE
+
+document.addEventListener('DOMContentLoaded', () => {
+  const hamburger = document.querySelector('.hamburger');
+  const navMenu   = document.querySelector('.nav-menu');
+  if (!hamburger || !navMenu) return;
+
+  const toggleMenu = (e) => {
+    if (e) e.preventDefault();
+    hamburger.classList.toggle('active');
+    navMenu.classList.toggle('active');
+    document.body.classList.toggle('nav-open');
+  };
+
+  const activationEvent = window.PointerEvent ? 'pointerup' : 'click';
+  hamburger.addEventListener(activationEvent, toggleMenu);
+
+  // Close on link tap
+  navMenu.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      navMenu.classList.remove('active');
+      document.body.classList.remove('nav-open');
+    });
+  });
+
+  // Close on Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      hamburger.classList.remove('active');
+      navMenu.classList.remove('active');
+      document.body.classList.remove('nav-open');
+    }
+  });
+});
+
+// --- Guard smooth scroll ---
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', (e) => {
+    const target = document.querySelector(anchor.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+
+// --- Guard Chart.js blocks (example) ---
+function safeChart(id, config) {
+  const el = document.getElementById(id);
+  if (!el || !window.Chart) return;
+  return new Chart(el, config);
+}
+
+// Example usage:
+// safeChart('comboChart', { /* your config */ });
+
+// IMPORTANT: delete any stray top-level fragments like a naked "datasets: [...]"
+
 document.addEventListener('DOMContentLoaded', () => {
   const hamburger = document.querySelector('.hamburger');
   const navMenu = document.querySelector('.nav-menu');
